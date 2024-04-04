@@ -23,7 +23,7 @@ Add your new fastlane action to Fastfile:
 platform :ios do
   desc "Upload dSYM to MTS Metrics"
   lane :upload_dsym do
-    upload_dsym_to_mtsmetrics(dsym_path: "./YourApplication.app.dSYM.zip", api_key: "XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX", applicationId: "test", "buildNumber: "test")
+    upload_dsym_to_mtsmetrics(dsym_path: "./YourApplication.app.dSYM.zip", api_key: "XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX", applicationId: "test", buildNumber: "test")
   end
 end
 ```
