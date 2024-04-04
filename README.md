@@ -10,17 +10,23 @@ This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To 
 fastlane add_plugin upload_dsym_to_mtsmetrics
 ```
 
-## About upload_dsym_to_mtsmetrics
-
-Uploads dSYM files to MTS Metrics
-
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+Specify the source for plugin by setting Git URL
+```bash
+https://github.com/bogartpi/upload-dsym
+```
 
 ## Example
 
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
+Add your new fastlane action to Fastfile:
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+```bash
+platform :ios do
+  desc "Upload dSYM to MTS Metrics"
+  lane :upload_dsym do
+    upload_dsym_to_mtsmetrics(dsym_path: "./YourApplication.app.dSYM.zip", api_key: "XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX", applicationId: "test", "buildNumber: "test")
+  end
+end
+```
 
 ## Run tests for this plugin
 
